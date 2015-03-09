@@ -22,6 +22,7 @@ function! s:RangerChooser(dirname)
         " Add any remaning items to the arg list/buffer list.
         for name in names[1:]
             exec 'tabe ' . fnameescape(name)
+            exec 'filetype detect'
         endfor
         redraw!
     endif
