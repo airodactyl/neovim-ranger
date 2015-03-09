@@ -13,5 +13,4 @@ This plugin is similar to `nerdtree<https://github.com/scrooloose/nerdtree>`_, i
 tips
 -----
 
-add ``nnoremap <f9> :tabe .<cr>`` to your vimrc, so that you could use <f9> to open new files in new tab.
-
+Add ``nnoremap <f9> :tabe %:p:h<cr>`` to your vimrc, so that you could use <f9> to open new files in new tab.
