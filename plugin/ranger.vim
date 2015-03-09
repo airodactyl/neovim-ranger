@@ -1,7 +1,7 @@
 " forked from 
 " https://github.com/hut/ranger/blob/master/doc/examples/vim_file_chooser.vim
 
-function! RangeChooser(dirname)
+function! s:RangerChooser(dirname)
     if isdirectory(a:dirname)
         let temp = tempname()
         exec 'silent !ranger --choosefiles=' . shellescape(temp) . ' ' . a:dirname
@@ -27,5 +27,5 @@ function! RangeChooser(dirname)
     endif
 endfunction
 
-au BufEnter *  sil! call RangeChooser(expand("<amatch>"))
+au BufEnter *  sil! call s:RangerChooser(expand("<amatch>"))
 let g:loaded_netrwPlugin = 'disable'
