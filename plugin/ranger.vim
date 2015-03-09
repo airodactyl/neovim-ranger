@@ -19,7 +19,7 @@ function! s:RangerChooser(dirname)
         " Edit the first item.
         exec 'edit ' . fnameescape(names[0])
         exec 'filetype detect'
-        " Add any remaning items to the arg list/buffer list.
+        " open any remaning items in new tabs
         for name in names[1:]
             exec 'tabe ' . fnameescape(name)
             exec 'filetype detect'
