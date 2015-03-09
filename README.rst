@@ -14,8 +14,8 @@ When you open a file in ranger, it will be opened in vim.
 You could also select multiple files and open'em all at once (use ``v`` to select multiple files in ranger).
 BTW, don't use it with nerdtree at the same time. 
 
-Require
--------
+Requirement
+------------
 
 ranger >= 1.5.1
 
