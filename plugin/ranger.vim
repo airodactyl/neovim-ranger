@@ -30,5 +30,5 @@ function! s:RangerChooser(dirname)
     endif
 endfunction
 
-au BufEnter *  sil! call s:RangerChooser(expand("<amatch>"))
+au BufEnter * silent call s:RangerChooser(expand("<amatch>"))
 let g:loaded_netrwPlugin = 'disable'
