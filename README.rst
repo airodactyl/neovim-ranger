@@ -19,13 +19,13 @@ Requirement
 
 ranger >= 1.5.1
 
+Tips
+-----
+
+Add ``nnoremap <f9> :tabe %:p:h<cr>`` to your vimrc, so that you could use ``<f9>`` to open new files in new tab.
+
 Known issue
 -----------
 
 After opening ranger once and back to vim, you can't use arrow-up/arrow-down to observe vim command line ":" history doesn't work anymore (unless restart vim).
 Workaground: use Ctrl+UP/DOWN to observe history, instead of just UP/DOWN.
-
-Tips
------
-
-Add ``nnoremap <f9> :tabe %:p:h<cr>`` to your vimrc, so that you could use ``<f9>`` to open new files in new tab.
