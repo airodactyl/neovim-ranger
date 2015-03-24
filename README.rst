@@ -19,8 +19,8 @@ Requirement
 
 ranger >= 1.5.1
 
-Known bug
-----------
+Known issue
+-----------
 
 After opening ranger once and back to vim, you can't use arrow-up/arrow-down to observe vim command line ":" history doesn't work anymore (unless restart vim).
 Workaground: use Ctrl+UP/DOWN to observe history, instead of just UP/DOWN.
