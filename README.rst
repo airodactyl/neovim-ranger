@@ -27,5 +27,6 @@ Add ``nnoremap <f9> :tabe %:p:h<cr>`` to your vimrc, so that you could use ``<f9
 Known issue
 -----------
 
-After opening ranger once and back to vim, you can't use arrow-up/arrow-down to observe vim command line ":" history doesn't work anymore (unless restart vim).
-Workaground: use Ctrl+UP/DOWN to observe history, instead of just UP/DOWN.
+1. After opening ranger once and back to vim, you can't use arrow-up/arrow-down to observe vim command line ":" history doesn't work anymore (unless restart vim). 
+   Workaground: use Ctrl+UP/DOWN to observe history, instead of just UP/DOWN.
+2. It doesn't work in gvim.
