@@ -1,5 +1,5 @@
 " forked from 
-" https://github.com/hut/ranger/blob/master/doc/examples/vim_file_chooser.vim
+" https://github.com/hut/ranger/blob/master/examples/vim_file_chooser.vim
 
 function! s:RangerChooser(dirname)
     if isdirectory(a:dirname)
