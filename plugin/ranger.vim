@@ -4,7 +4,11 @@
 function! s:RangerChooser(dirname)
     if isdirectory(a:dirname)
         let temp = tempname()
-        exec 'silent !ranger --choosefiles=' . shellescape(temp) . ' ' . a:dirname
+        if has("gui_running")
+            exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp) . ' ' . a:dirname
+        else
+            exec 'silent !ranger --choosefiles=' . shellescape(temp) . ' ' . a:dirname
+        endif
         if !filereadable(temp)
             " close window if nothing to read, probably user closed ranger
             close
