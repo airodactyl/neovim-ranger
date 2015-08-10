@@ -29,3 +29,14 @@ Known issue
 
 1. After opening ranger once and back to vim, you can't use arrow-up/arrow-down to observe vim command line ":" history doesn't work anymore (unless restart vim). 
    Workaground: use Ctrl+UP/DOWN to observe history, instead of just UP/DOWN.
+
+Notes
+-----
+
+This plugin is forked from the official ranger example here:
+https://github.com/hut/ranger/blob/master/examples/vim_file_chooser.vim
+
+There are 2 main differences
+
+1. Unlike the original plugin, in my plugin the files are opened in tabs instead of buffers.
+2. Ranger will be opened automatically when you :edit a directory. The original plugin requires to execute a vim command to open ranger.
