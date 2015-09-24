@@ -1,38 +1,35 @@
 " forked from 
 " https://github.com/hut/ranger/blob/master/examples/vim_file_chooser.vim
+" https://github.com/Mizuchi/vim-ranger/blob/master/plugin/ranger.vim
 
-function! s:RangerChooser(dirname)
-    if isdirectory(a:dirname)
-        let temp = tempname()
-        if has("gui_running")
-            exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp) . ' ' . a:dirname
-        else
-            exec 'silent !ranger --choosefiles=' . shellescape(temp) . ' ' . a:dirname
-        endif
-        if !filereadable(temp)
-            " close window if nothing to read, probably user closed ranger
-            close
-            redraw!
-            return
-        endif
-        let names = readfile(temp)
-        if empty(names)
-            " close window if nothing to open.
-            close
-            redraw!
-            return
-        endif
-        " Edit the first item.
-        exec 'edit ' . fnameescape(names[0])
+function! s:RangerMagic(dirname)
+	if exists('g:rangered')
+		let rangered = g:rangered
+		unlet g:rangered
+
+		if !filereadable(rangered)
+			return
+		endif
+
+		let names = readfile(rangered)
+
+		if empty(names)
+			return
+		endif
+
+		exec 'edit ' . fnameescape(names[0])
         filetype detect
-        " open any remaning items in new tabs
-        for name in names[1:]
+
+		for name in names[1:]
             exec 'tabe ' . fnameescape(name)
             filetype detect
         endfor
-        redraw!
-    endif
+	elseif isdirectory(a:dirname)
+		let g:rangered = tempname()
+		bdelete!
+		exec 'terminal ranger --choosefiles=' . shellescape(g:rangered) . ' ' . a:dirname
+	endif
 endfunction
 
-au BufEnter * silent call s:RangerChooser(expand("<amatch>"))
+au BufEnter * silent call s:RangerMagic(expand("<amatch>")) 
 let g:loaded_netrwPlugin = 'disable'
