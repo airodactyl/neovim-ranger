@@ -30,6 +30,7 @@ Known issues
 -----------
 
 1. After closing ranger, the prompt waiting for a key press is displayed. This can't be bypassed, and will hopefully be fixed by neovim-0.2.
+2. <C-h> does not work in ranger through neovim, zh can be used instead.
 
 Notes
 -----
