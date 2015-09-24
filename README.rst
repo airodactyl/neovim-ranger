@@ -2,6 +2,7 @@ neovim-ranger
 ==========
 
 Copyright (C) 2015 Tianjiao Yin <ytj000@gmail.com>
+
 with fixes for neovim by Michael Hoang <enzime@users.noreply.github.com>
 
 User Guide
@@ -19,6 +20,7 @@ Requirement
 ------------
 
 neovim
+
 ranger >= 1.5.1
 
 Tips
