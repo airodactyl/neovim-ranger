@@ -27,7 +27,7 @@ function! s:RangerMagic(dirname)
 	elseif isdirectory(a:dirname)
 		let g:rangered = tempname()
 		bdelete!
-		exec 'terminal ranger --choosefiles=' . shellescape(g:rangered) . ' ' . a:dirname
+		exec 'terminal ranger --choosefiles=' . shellescape(g:rangered) . ' ' . shellescape(a:dirname)
 	endif
 endfunction
 
